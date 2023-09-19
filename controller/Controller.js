@@ -16,6 +16,8 @@ class Controller {
     console.log(MODEL.getList())
     $(window).on("torles", (event) => {
         console.log(event.detail);
+        megjelenito.storeDeletedSor(toroltSor);
+        console.log(ToroltSorok)
     });
     }
 }

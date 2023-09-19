@@ -1,8 +1,8 @@
-import { TODOLIST2 } from "../adatok.js";
+
 
 class MegjelenitSor {
     #adat = {};
-
+    #toroltSorok = [];
     constructor(adat, szuloElem) {
         this.#adat = adat;
         this.tablaElem = szuloElem;
@@ -35,8 +35,17 @@ class MegjelenitSor {
 
         this.torolElem.on("click", () => {
             this.sorElem.remove();
-            this.#esemenyTrigger("torol");
+            this.storeDeletedSor(this.sorElem);
+            console.log(this.#toroltSorok);
         });
+    }
+    storeDeletedSor(sor) {
+        const toroltSor = {
+            tevekenyseg: sor.find("td:nth-child(1)").text(),
+            hatarido: sor.find("td:nth-child(2)").text(),
+        };
+        this.#toroltSorok.push(toroltSor);
+        console.log(this.#toroltSorok);
     }
 
     #sor() {
