@@ -1,5 +1,20 @@
+body{
+    margin: auto;
+}
 main{
     width: 80%;
     max-width: 1200px;
     margin: auto;
+}
+article{
+    display: grid;
+    grid-template-areas: "u u u"
+                         "t t t";
+}
+
+.ujadat{
+    grid-area: u;
+}
+.tarolo{
+    grid-area: t;
 }
